@@ -1,0 +1,20 @@
+<footer class="footer">
+  <!-- This should be `0 items left` by default -->
+  <span class="todo-count"><strong>{{countTaskPending}}</strong>{{ countTaskPending === 1 ? ' item left' : ' items left'
+    }}</span>
+
+  <!-- Remove this if you don't implement routing -->
+  <ul class="filters">
+    <li>
+      <a routerLinkActive="selected" routerLink="/all">All</a>
+    </li>
+    <li>
+      <a routerLinkActive="selected" routerLink="/pending">Pending</a>
+    </li>
+    <li>
+      <a routerLinkActive="selected" routerLink="/completed">Completed</a>
+    </li>
+  </ul>
+  <!-- Hidden if no completed items are left ↓ -->
+  <button (click)="clearCompleted()" class="clear-completed">Clear completed</button>
+</footer>
