@@ -64,6 +64,17 @@ export class TaskService {
     this._tasksUpdate$.next(tasks);
   }
 
+  countCompletedTasks(): number {
+    const tasks = this.getTasks();
+    const countCompleted = tasks.reduce(
+      (acc: number, task: { completed: boolean }) => {
+        return task.completed ? acc + 1 : acc;
+      },
+      0
+    );
+    return countCompleted;
+  }
+
   countPendingTasks(): number {
     const tasks = this.getTasks();
     const countPending = tasks.reduce(

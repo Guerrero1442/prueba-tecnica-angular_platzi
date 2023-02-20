@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
   tasks: Task[] = [];
   currentUrl: string;
   countTaskPending: number;
+  countTaskCompleted: number;
   subscription: Subscription;
 
   constructor(private taskService: TaskService, private route: ActivatedRoute) {
@@ -23,8 +24,10 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.tasks = this.taskService.getTasks();
     this.countTaskPending = this.taskService.countPendingTasks();
+    this.countTaskCompleted = this.taskService.countCompletedTasks();
     this.subscription = this.taskService.tasksUpdate$.subscribe(() => {
       this.countTaskPending = this.taskService.countPendingTasks();
+      this.countTaskCompleted = this.taskService.countCompletedTasks();
     });
   }
 
