@@ -3,7 +3,7 @@
     <div class="container">
       <h1>My Day</h1>
       <p>All my tasks in one place</p>
-      <input class="new-todo" placeholder="Type new todo" autofocus (keydown.enter)="createTask($event)" type="text" />
+      <input class="new-todo" placeholder="Type new task" autofocus (keydown.enter)="createTask($event)" type="text" />
     </div>
   </header>
   <div *ngIf="tasks.length > 0" class="container todoapp-wrapper">
