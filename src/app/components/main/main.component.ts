@@ -16,7 +16,7 @@ import { Task } from '../../models/task.model';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export default class MainComponent implements OnInit, OnChanges {
+export class MainComponent implements OnInit, OnChanges {
   tasks: Task[];
   selectedFilter: string;
   subscription: Subscription;
